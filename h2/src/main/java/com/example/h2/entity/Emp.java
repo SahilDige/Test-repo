@@ -5,15 +5,24 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
-
+import jakarta.validation.constraints.Max;
+import jakarta.validation.constraints.Min;
+import jakarta.validation.constraints.NotNull;
+//orm
 @Entity
+//USED FOR MAPPING TABLE IF NAME IS NOT SAME THEN PROVIDE BELOW LINE OTHERWISE ITS IS FINE TO WORRK WITH IT AS IS.
 @Table(name="Emp")
 public class Emp {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Integer id;
+	
+	@NotNull(message = "NAME SHOULD NOT BE NULL" )
 	private String name;
+	
+	@Min(8)
+	@Max(10)
 	private Integer salary;
 	private String status;
 	

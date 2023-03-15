@@ -1,5 +1,5 @@
 package com.example.h2.service;
-
+//interface - used data abstraction -- to show thing we need to visualize end user.
 import java.util.List;
 
 import com.example.h2.entity.Emp;
